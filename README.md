@@ -1,5 +1,34 @@
 # ProjectNgrxRedux
 
+[Componente Angular]
+       │
+       │  dispatch(action)
+       ▼
+   ┌─────────┐
+   │  STORE  │  <────── Recebe a action
+   └─────────┘
+       │
+       │  Passa a action e estado atual para os
+       │  ┌───────────────────────┐
+       │  │       REDUCERS        │
+       │  └───────────────────────┘
+       │           │
+       │           │  Retornam novo estado
+       │           ▼
+       └──── Atualiza estado global ────┐
+                                       │
+                                       ▼
+                             ┌─────────────────┐
+                             │    SELECTORS    │
+                             │(funções que     │
+                             │ extraem dados)  │
+                             └─────────────────┘
+                                       │
+                                       ▼
+                           [Componentes Angular observando]
+                         (recebem o estado atualizado via select)
+
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.0.
 
 ## Development server
